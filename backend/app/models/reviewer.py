@@ -4,6 +4,8 @@ from sqlalchemy.orm.properties import ColumnProperty
 from . import db
 from .budget_enum import budget_enum
 
+# from .review import Review
+
 # common columns and methods across multiple data models can be added via a Mixin class:
 # https://docs.sqlalchemy.org/en/13/orm/extensions/declarative/mixins.html
 

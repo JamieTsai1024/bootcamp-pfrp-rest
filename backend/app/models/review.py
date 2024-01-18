@@ -4,6 +4,8 @@ from sqlalchemy.orm.properties import ColumnProperty
 from . import db
 from .budget_enum import budget_enum
 
+# from .reviewer import Reviewer
+
 # common columns and methods across multiple data models can be added via a Mixin class:
 # https://docs.sqlalchemy.org/en/13/orm/extensions/declarative/mixins.html
 
@@ -18,5 +20,5 @@ class Review(db.Model):
 
     id = db.column(db.Integer, primary_key=True, nullable=False)
     content = db.column(db.String, nullable=False)
-    reviewer_id = db.column(db.Integer, db.ForeignKey('reviewers.id'))
+    reviewer_id = db.column(db.Integer, db.ForeignKey('reviewer.id'))
     reviewer = db.relationship('Reviewer', back_populates='review')

@@ -2,8 +2,9 @@
 import React from 'react';
 
 // Define relative imports here
-import Title from './components/Title';
+import AddRestaurantContainer from './components/AddRestaurantContainer';
 import DisplayContainer from './components/DisplayContainer';
+import Title from './components/Title';
 
 /**
  * This is the root component of your React App.
@@ -11,11 +12,12 @@ import DisplayContainer from './components/DisplayContainer';
  */
 const App = () => {
   return (
-    <div className="App">
-      <Title teamName="your_team_name" ></Title>
+    <div className='App'>
+      <Title teamName='your_team_name'></Title>
+      <AddRestaurantContainer />
       <DisplayContainer />
     </div>
   );
-}
+};
 
 export default App;
