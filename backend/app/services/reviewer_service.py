@@ -8,6 +8,7 @@ separation of concerns leads to maintainable code as the application grows, and 
 
 def delete_reviewer(id):
     deleted = Reviewer.query.filter_by(id=id).delete()
+    # TODO: Delete reviews
     db.session.commit()
     
     # deleted is the number of rows deleted
