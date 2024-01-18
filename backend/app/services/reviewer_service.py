@@ -19,6 +19,13 @@ def get_reviewer(id):
         return reviewer
     return reviewer.to_dict()
 
+def create_reviewer(reviewer):
+    new_reviewer = Reviewer(**reviewer)
+    db.session.add(new_reviewer)
+    # remember to commit to actually persist into the database
+    db.session.commit()
+    return new_reviewer.id
+
 def delete_reviewer(id):
     deleted = Reviewer.query.filter_by(id=id).delete()
     # TODO: Delete reviews

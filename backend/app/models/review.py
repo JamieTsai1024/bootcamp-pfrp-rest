@@ -18,5 +18,5 @@ class Review(db.Model):
 
     id = db.column(db.Integer, primary_key=True, nullable=False)
     content = db.column(db.String, nullable=False)
-    reviewer_id = db.column(db.Integer, db.ForeignKey('reviewers.id'))
-    reviewer = db.relationship('Reviewer', back_populates='review')
+    # reviewer_id = db.column(db.Integer, db.ForeignKey('reviewers.id'))
+    # reviewer = db.relationship('Reviewer', back_populates='review')

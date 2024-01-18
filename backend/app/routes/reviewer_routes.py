@@ -30,6 +30,15 @@ def get_reviewer(id):
     # HTTP status code 200 means OK
     return jsonify(result), 200
 
+# defines CREATE endpoint
+@blueprint.route('/', methods=['POST'], strict_slashes=False)
+def create_reviewer():
+    new_reviewer = request.get_json()
+
+    result = reviewer_service.create_reviewer(new_reviewer)
+
+    return 200
+
 # defines DELETE endpoint for deleting the restaurant with the provided id
 @blueprint.route('/<int:id>', methods=['DELETE'], strict_slashes=False)
 def delete_reviewer(id):

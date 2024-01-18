@@ -19,4 +19,4 @@ class Reviewer(db.Model):
     id = db.Column(db.Integer, primary_key=True, nullable=False)
     name = db.Column(db.String(50), nullable=False)
     type = db.Column(db.String(50))
-    reviews = db.relationship("Review", backref="reviewer")
+    # reviews = db.relationship("Review", backref="reviewer")
