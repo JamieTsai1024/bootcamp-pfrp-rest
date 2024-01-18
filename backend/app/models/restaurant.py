@@ -3,6 +3,7 @@ from sqlalchemy.orm.properties import ColumnProperty
 
 from . import db
 from .budget_enum import budget_enum
+from .association import restaurant_group_association
 
 # common columns and methods across multiple data models can be added via a Mixin class:
 # https://docs.sqlalchemy.org/en/13/orm/extensions/declarative/mixins.html
@@ -23,6 +24,7 @@ class Restaurant(db.Model):
     budget = db.Column(budget_enum)
     description = db.Column(db.String(250))
     rating = db.Column(db.Integer)
+    groups = db.relationship('RestaurantGroup', secondary=restaurant_group_association, back_populates='restaurants')
 
     # must define how to convert to a dict so that Restaurant can eventually be serialized into JSON
     # this would be a good method to include in a base Mixin
